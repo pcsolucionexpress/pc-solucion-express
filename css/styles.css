@@ -551,7 +551,8 @@ h1, h2, h3, h4 {
 }
 .price-card .service-icon { margin: 0 auto 20px; }
 .price-card h3 { font-size: 1.15rem; margin-bottom: 6px; }
-.price-card .price {
+.price-card .price .price-normal,
+.price-card .price .price-domicilio {
   font-family: var(--font-heading);
   font-size: 2.3rem;
   font-weight: 700;
@@ -876,3 +877,48 @@ h1, h2, h3, h4 {
   .why-actions .btn { width: 100%; }
   .whatsapp-float { bottom: 18px; right: 18px; width: 52px; height: 52px; }
 }
+/* ---------- Toggle Precio normal / A domicilio ---------- */
+.price-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.price-toggle {
+  display: inline-flex;
+  background: var(--celeste-light);
+  border-radius: 999px;
+  padding: 6px;
+  gap: 4px;
+}
+
+.price-toggle button {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 26px;
+  border-radius: 999px;
+  color: var(--blue-darker);
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.price-toggle button.active {
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(30, 115, 190, 0.32);
+}
+
+.price-note {
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.85rem;
+  max-width: 520px;
+  margin: 0 auto 40px;
+  display: none;
+}
+
+.price-note.show { display: block; }
+
+.price-card .price-domicilio { display: none; }
+.price-card.show-domicilio .price-normal { display: none; }
+.price-card.show-domicilio .price-domicilio { display: inline; }
